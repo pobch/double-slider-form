@@ -158,14 +158,15 @@ input {
   position: absolute;
   top: 0;
   height: 100%;
-  left: 50%;
-  width: 50%;
+  left: 50%; /* calculate from parent */
+  width: 50%; /* calculate from parent */
   z-index: 10;
   transition: transform 0.6s ease-in-out;
+  overflow: hidden;
 }
 
 .container.right-panel-active .overlay-container {
-  transform: translateX(-100%);
+  transform: translateX(-100%); /* calculate from its own width */
 }
 
 .overlay {
@@ -174,4 +175,14 @@ input {
   background-position: 0 0;
   background-repeat: no-repeat; */
   color: #ffffff;
+  display: flex;
+  height: 100%; /* calculate from parent, i.e. .overlay-container */
+  width: 200%; /* calculate from parent, i.e. .overlay-container */
+  position: relative;
+  left: -100%; /* calculate from parent, i.e. .overlay-container */
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
 }

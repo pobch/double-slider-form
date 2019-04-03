@@ -171,6 +171,7 @@ input {
 .overlay {
   background: linear-gradient(to right, #ff4b2b, #ff416c);
   /* background-size: cover;
-  background-position: 0 0; */
+  background-position: 0 0;
+  background-repeat: no-repeat; */
   color: #ffffff;
 }
